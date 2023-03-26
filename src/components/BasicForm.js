@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import useInput from "../hooks/use-input";
 
 const BasicForm = () => {
@@ -52,9 +51,7 @@ const BasicForm = () => {
   const classeslNameInvalid = lNameError ? 'form-control invalid': 'form-control';
   const classesEmailInvalid = emailError ? 'form-control invalid': 'form-control';
 
-  useEffect(()=>{
 
-  },[])
 
   return (
     <form onSubmit={submitHandler}>
