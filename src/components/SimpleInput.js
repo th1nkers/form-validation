@@ -1,7 +1,7 @@
 import React from 'react'
 import useInput from '../hooks/use-input';
 
-const SimpleInput = (props) => {
+const SimpleInput = () => {
 
   const {
     value: enteredName,
@@ -37,7 +37,7 @@ const SimpleInput = (props) => {
   const formSubmissionHandler = e => {
     e.preventDefault();
 
-    if (!enterNameIsValid){
+    if (!enterNameIsValid && !enterEmailIsValid){
       return;
     };
 
@@ -57,9 +57,12 @@ const SimpleInput = (props) => {
  }
   ////////////////////////////////////////
 
+  const classesInvalid = (nameInputIsInvalid || emailInputIsInvalid) ? 'form-control invalid' : 'form-control';
+
+
   return (
     <form onSubmit={formSubmissionHandler}>
-      <div className={(nameInputIsInvalid || emailInputIsInvalid) ? 'form-control invalid' : 'form-control'}>
+      <div className={classesInvalid}>
         <label htmlFor='name'>Your Name</label>
         <input
           type='text'
